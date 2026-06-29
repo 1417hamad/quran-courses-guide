@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm, Controller } from 'react-hook-form'
+import { TurnstileWidget } from './TurnstileWidget'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
 import { Upload, X, Loader2, CheckCircle } from 'lucide-react'
@@ -47,6 +48,7 @@ export function AddProgramForm() {
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [turnstileVerified, setTurnstileVerified] = useState(false)
 
   const {
     register,
@@ -674,10 +676,24 @@ export function AddProgramForm() {
         ))}
       </section>
 
+      {/* Turnstile */}
+      {process.env.NODE_ENV !== 'development' && (
+        <TurnstileWidget
+          onVerify={(token) => {
+            setValue('turnstile_token', token)
+            setTurnstileVerified(true)
+          }}
+          onExpire={() => {
+            setValue('turnstile_token', '')
+            setTurnstileVerified(false)
+          }}
+        />
+      )}
+
       {/* Submit */}
       <button
         type="submit"
-        disabled={isSubmitting || uploading}
+        disabled={isSubmitting || uploading || (process.env.NODE_ENV !== 'development' && !turnstileVerified)}
         className="w-full flex items-center justify-center gap-2 bg-emerald-700 text-white py-3.5 rounded-xl font-bold text-base hover:bg-emerald-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {(isSubmitting || uploading) ? (

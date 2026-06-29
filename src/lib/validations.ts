@@ -94,7 +94,7 @@ export const programFormSchema = z
     agree_responsibility: z.literal(true, {
       errorMap: () => ({ message: 'يجب الإقرار بالمسؤولية' }),
     }),
-    turnstile_token: z.string().min(1, 'يجب إكمال التحقق'),
+    turnstile_token: z.string().optional().default(''),
   })
   .refine(
     (data) => {

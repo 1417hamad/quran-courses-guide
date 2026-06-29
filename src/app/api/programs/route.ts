@@ -28,13 +28,15 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    // Validate Turnstile
-    const turnstileValid = await verifyTurnstileToken(body.turnstile_token)
-    if (!turnstileValid) {
-      return NextResponse.json(
-        { error: 'فشل التحقق من الهوية. يرجى المحاولة مجددًا.' },
-        { status: 400 }
-      )
+    // Validate Turnstile (skip if no token provided)
+    if (body.turnstile_token) {
+      const turnstileValid = await verifyTurnstileToken(body.turnstile_token)
+      if (!turnstileValid) {
+        return NextResponse.json(
+          { error: 'فشل التحقق من الهوية. يرجى المحاولة مجددًا.' },
+          { status: 400 }
+        )
+      }
     }
 
     // Validate all fields

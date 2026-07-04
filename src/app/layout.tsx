@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Toaster } from 'sonner'
+import { AuthRedirect } from '@/components/AuthRedirect'
 
 const ibmPlex = IBM_Plex_Sans_Arabic({
   subsets: ['arabic'],
@@ -52,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={ibmPlex.variable}>
       <body className="min-h-screen flex flex-col bg-gray-50 font-[family-name:var(--font-arabic)]">
+        <AuthRedirect />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

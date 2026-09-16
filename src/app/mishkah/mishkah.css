@@ -1,0 +1,558 @@
+/* ===========================================================================
+   بيئة مشكاة الرقمية — نظام التصميم
+   جميع الألوان تُحقن من src/mishkah/brand.ts كمتغيرات CSS على .mk-root
+   =========================================================================== */
+
+.mk-root {
+  color: var(--mk-ink);
+  background: var(--mk-bg);
+  font-family: var(--mk-font);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mk-root *,
+.mk-root *::before,
+.mk-root *::after {
+  box-sizing: border-box;
+}
+
+/* ————————————————————————— أسطح وبطاقات ————————————————————————— */
+
+.mk-card {
+  background: var(--mk-surface);
+  border: 1px solid var(--mk-line);
+  border-radius: var(--mk-radius-lg);
+  box-shadow: 0 1px 2px rgba(22, 33, 31, 0.04);
+}
+
+.mk-card-hover {
+  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+.mk-card-hover:hover {
+  box-shadow: 0 8px 24px rgba(14, 79, 74, 0.09);
+  border-color: color-mix(in srgb, var(--mk-primary) 22%, var(--mk-line));
+  transform: translateY(-1px);
+}
+
+.mk-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mk-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mk-muted {
+  color: var(--mk-muted);
+}
+
+.mk-divider {
+  height: 1px;
+  background: var(--mk-line);
+  border: 0;
+}
+
+/* ————————————————————————— الأزرار ————————————————————————— */
+
+.mk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: var(--mk-radius-md);
+  border: 1px solid transparent;
+  padding: 0.6rem 1.05rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease, opacity 0.16s ease;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.mk-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mk-btn-primary {
+  background: var(--mk-primary);
+  color: #fff;
+}
+
+.mk-btn-primary:hover:not(:disabled) {
+  background: var(--mk-primary-dark);
+}
+
+.mk-btn-gold {
+  background: var(--mk-gold);
+  color: #fff;
+}
+
+.mk-btn-gold:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--mk-gold) 82%, #000);
+}
+
+.mk-btn-soft {
+  background: var(--mk-primary-soft);
+  color: var(--mk-primary);
+}
+
+.mk-btn-soft:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--mk-primary) 16%, #fff);
+}
+
+.mk-btn-ghost {
+  background: transparent;
+  color: var(--mk-muted);
+  border-color: var(--mk-line);
+}
+
+.mk-btn-ghost:hover:not(:disabled) {
+  background: var(--mk-primary-tint);
+  color: var(--mk-primary);
+}
+
+.mk-btn-danger {
+  background: color-mix(in srgb, var(--mk-danger) 10%, #fff);
+  color: var(--mk-danger);
+  border-color: color-mix(in srgb, var(--mk-danger) 24%, #fff);
+}
+
+.mk-btn-danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--mk-danger) 16%, #fff);
+}
+
+.mk-btn-sm {
+  padding: 0.38rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: var(--mk-radius-sm);
+}
+
+.mk-btn-lg {
+  padding: 0.85rem 1.4rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* ————————————————————————— الشرائح والوسوم ————————————————————————— */
+
+.mk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid var(--mk-line);
+  background: var(--mk-surface);
+  color: var(--mk-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+
+.mk-chip:hover {
+  border-color: color-mix(in srgb, var(--mk-primary) 35%, var(--mk-line));
+  color: var(--mk-primary);
+}
+
+.mk-chip-active {
+  background: var(--mk-primary);
+  border-color: var(--mk-primary);
+  color: #fff;
+}
+
+.mk-chip-active:hover {
+  color: #fff;
+}
+
+.mk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.mk-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+/* ————————————————————————— الحقول ————————————————————————— */
+
+.mk-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mk-ink);
+  margin-bottom: 0.4rem;
+}
+
+.mk-input,
+.mk-select,
+.mk-textarea {
+  width: 100%;
+  border: 1px solid var(--mk-line);
+  border-radius: var(--mk-radius-md);
+  background: var(--mk-surface);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--mk-ink);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.mk-input::placeholder,
+.mk-textarea::placeholder {
+  color: color-mix(in srgb, var(--mk-muted) 65%, #fff);
+}
+
+.mk-input:focus,
+.mk-select:focus,
+.mk-textarea:focus {
+  outline: none;
+  border-color: var(--mk-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mk-primary) 14%, transparent);
+}
+
+.mk-textarea {
+  min-height: 6rem;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.mk-select {
+  appearance: none;
+  /* سهم مخصص (chevron) يظهر على يسار الحقل لأن الاتجاه من اليمين لليسار */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236C7C78' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: left 0.9rem center;
+  background-repeat: no-repeat;
+  padding-left: 2.2rem;
+}
+
+.mk-hint {
+  font-size: 0.75rem;
+  color: var(--mk-muted);
+  margin-top: 0.3rem;
+}
+
+.mk-error {
+  font-size: 0.75rem;
+  color: var(--mk-danger);
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.mk-check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--mk-line);
+  border-radius: var(--mk-radius-md);
+  background: var(--mk-surface);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.16s ease;
+}
+
+.mk-check:hover {
+  border-color: color-mix(in srgb, var(--mk-primary) 30%, var(--mk-line));
+}
+
+.mk-check input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--mk-primary);
+}
+
+/* ————————————————————————— التنقل ————————————————————————— */
+
+.mk-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--mk-surface) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mk-line);
+}
+
+.mk-bottomnav {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--mk-surface) 94%, transparent);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--mk-line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mk-navitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--mk-muted);
+  transition: color 0.16s ease;
+}
+
+.mk-navitem-active {
+  color: var(--mk-primary);
+}
+
+.mk-side-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--mk-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--mk-muted);
+  transition: all 0.16s ease;
+}
+
+.mk-side-link:hover {
+  background: var(--mk-primary-tint);
+  color: var(--mk-primary);
+}
+
+.mk-side-link-active {
+  background: var(--mk-primary-soft);
+  color: var(--mk-primary);
+}
+
+/* ————————————————————————— الصورة الرمزية ————————————————————————— */
+
+.mk-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  flex: none;
+  letter-spacing: -0.04em;
+}
+
+/* ————————————————————————— النوافذ ————————————————————————— */
+
+.mk-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(16, 28, 26, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  animation: mk-fade 0.18s ease;
+}
+
+@media (min-width: 640px) {
+  .mk-overlay {
+    align-items: center;
+    padding: 1.5rem;
+  }
+}
+
+.mk-modal {
+  background: var(--mk-surface);
+  width: 100%;
+  max-width: 34rem;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: var(--mk-radius-xl) var(--mk-radius-xl) 0 0;
+  animation: mk-rise 0.22s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .mk-modal {
+    border-radius: var(--mk-radius-xl);
+  }
+}
+
+@keyframes mk-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mk-rise {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ————————————————————————— التنبيهات ————————————————————————— */
+
+.mk-toasts {
+  position: fixed;
+  inset-inline: 0;
+  top: 0.9rem;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+.mk-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--mk-ink);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(16, 28, 26, 0.22);
+  animation: mk-rise 0.2s ease;
+  max-width: 100%;
+}
+
+/* ————————————————————————— التحميل ————————————————————————— */
+
+.mk-skeleton {
+  background: linear-gradient(90deg, var(--mk-primary-tint) 25%, #fff 50%, var(--mk-primary-tint) 75%);
+  background-size: 200% 100%;
+  animation: mk-shimmer 1.3s infinite;
+  border-radius: var(--mk-radius-md);
+}
+
+@keyframes mk-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.mk-spinner {
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 999px;
+  animation: mk-spin 0.7s linear infinite;
+}
+
+.mk-spinner-dark {
+  border-color: color-mix(in srgb, var(--mk-primary) 25%, transparent);
+  border-top-color: var(--mk-primary);
+}
+
+@keyframes mk-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ————————————————————————— أدوات ————————————————————————— */
+
+.mk-scroll-x {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.15rem;
+}
+
+.mk-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+.mk-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mk-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mk-prewrap {
+  white-space: pre-wrap;
+  line-height: 1.95;
+}
+
+.mk-progress {
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--mk-primary-tint);
+  overflow: hidden;
+}
+
+.mk-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.mk-tab {
+  padding: 0.55rem 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--mk-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  background: none;
+  border-inline: 0;
+  border-top: 0;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.mk-tab-active {
+  color: var(--mk-primary);
+  border-bottom-color: var(--mk-primary);
+}
+
+.mk-link {
+  color: var(--mk-primary);
+  font-weight: 600;
+}
+
+.mk-link:hover {
+  text-decoration: underline;
+}
+
+.mk-pattern {
+  background-image: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--mk-primary) 12%, transparent) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+/* فاصل بين أجزاء سطر واحد — معزول اتجاهيًا حتى لا يلتبس بالرقم العربي «٠» */
+.mk-sep {
+  display: inline-block;
+  unicode-bidi: isolate;
+  padding-inline: 0.5em;
+  opacity: 0.4;
+  font-weight: 400;
+}
+
+/* حقل بحث بأيقونة في بداية السطر */
+.mk-input-search {
+  padding-inline-start: 2.7rem;
+}

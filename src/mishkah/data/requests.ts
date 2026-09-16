@@ -161,7 +161,7 @@ export const requests: ServiceRequest[] = [
     dueDays: 3,
     daysLeft: -1,
     values: {
-      subject: 'مكافأة مدرّبة ورشة الإلقاء',
+      subject: 'مكافأة مدرّب ورشة الإلقاء',
       expenseType: 'مكافأة متعاون',
       amount: '2500',
       beneficiaryType: 'متعاون',
@@ -208,7 +208,7 @@ export const requests: ServiceRequest[] = [
     id: 'req-1040',
     ref: 'طلب-١٠٤٠',
     serviceId: 'svc-platform-access',
-    requesterId: 'emp-14',
+    requesterId: 'emp-09',
     createdAt: daysAgo(4),
     updatedAt: daysAgo(4),
     status: 'submitted',
@@ -220,7 +220,7 @@ export const requests: ServiceRequest[] = [
       details: 'صلاحية تحرير ونشر على منصة إدارة المحتوى لمتابعة نشر مواد البرامج.',
     },
     attachments: [],
-    timeline: [{ at: daysAgo(4), actorId: 'emp-14', action: 'تم تقديم الطلب' }],
+    timeline: [{ at: daysAgo(4), actorId: 'emp-09', action: 'تم تقديم الطلب' }],
   },
   {
     id: 'req-1045',

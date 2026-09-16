@@ -77,7 +77,7 @@ export default function KnowledgePage() {
       {!q && tab === 'all' && (
         <div className="grid sm:grid-cols-2 gap-3">
           <div className="mk-card p-4">
-            <SectionHeader title="الأكثر استخدامًا" icon={<TrendingUp size={15} style={{ color: 'var(--mk-gold)' }} />} />
+            <SectionHeader title="الأكثر استخدامًا" icon={<TrendingUp size={15} style={{ color: 'var(--mk-gold-deep)' }} />} />
             <div className="space-y-2.5">
               {mostUsed.map((d) => (
                 <Link key={d.id} href={`/mishkah/knowledge/${d.id}`} className="block">
@@ -178,7 +178,7 @@ export default function KnowledgePage() {
                         className="mk-btn mk-btn-ghost mk-btn-sm shrink-0"
                         onClick={() => toggleFavoriteDoc(d.id)}
                         aria-label="إضافة للمفضلة"
-                        style={d.favorite ? { color: 'var(--mk-gold)', borderColor: 'var(--mk-gold)' } : undefined}
+                        style={d.favorite ? { color: 'var(--mk-gold-deep)', borderColor: 'var(--mk-gold-deep)' } : undefined}
                       >
                         <Star size={15} fill={d.favorite ? 'currentColor' : 'none'} />
                       </button>

@@ -543,7 +543,7 @@ export function MishkahProvider({ children }: { children: ReactNode }) {
             unitId: input.unitId,
             teamIds: [],
             initials,
-            tone: '#0E4F4A',
+            tone: '#122B29',
             bio: 'موظف جديد في المركز.',
             expertise: [],
             email: 'new.member@mishkah.sa',

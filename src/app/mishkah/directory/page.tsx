@@ -65,7 +65,7 @@ export default function DirectoryPage() {
                     <p className="text-xs mk-muted truncate">{e.title}</p>
                     <p className="text-xs mk-muted mt-0.5 truncate">{unit?.name}</p>
                   </div>
-                  {e.isNew && <Badge tone="var(--mk-gold)">جديد</Badge>}
+                  {e.isNew && <Badge tone="var(--mk-gold-deep)">جديد</Badge>}
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mt-3">

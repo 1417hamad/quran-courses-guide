@@ -68,7 +68,7 @@ export default function UnitsPage() {
                 {u.tracks && (
                   <div className="flex flex-wrap gap-1.5 mt-2.5">
                     {u.tracks.map((t) => (
-                      <Badge key={t.id} tone="var(--mk-gold)">
+                      <Badge key={t.id} tone="var(--mk-gold-deep)">
                         {t.name}
                       </Badge>
                     ))}

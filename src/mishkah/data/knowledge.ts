@@ -199,7 +199,7 @@ export const documents: KnowledgeDoc[] = [
   },
   {
     id: 'doc-int-002',
-    title: 'المادة التعريفية بمركز مشكاة العلمي',
+    title: 'المادة التعريفية بمركز مشكاة التعليمي',
     type: 'intro',
     ownerUnitId: 'unit-strategy',
     issuedBy: 'المركز',
@@ -236,10 +236,10 @@ export const documents: KnowledgeDoc[] = [
 
 /** منصات المركز وروابطه المجمّعة */
 export const platformLinks: PlatformLink[] = [
-  { id: 'lnk-01', label: 'منصة التسجيل في البرامج', description: 'تسجيل المستفيدين ومتابعة الحلقات', href: '#', tone: '#0E4F4A' },
-  { id: 'lnk-02', label: 'منصة إدارة المحتوى', description: 'رفع المواد العلمية ونشرها', href: '#', tone: '#B98B3E' },
-  { id: 'lnk-03', label: 'البريد الإلكتروني', description: 'بريد المركز الرسمي', href: '#', tone: '#2A6F97' },
-  { id: 'lnk-04', label: 'مساحة الملفات المشتركة', description: 'ملفات الإدارات والفرق', href: '#', tone: '#5B4B8A' },
+  { id: 'lnk-01', label: 'منصة التسجيل في البرامج', description: 'تسجيل المستفيدين ومتابعة الحلقات', href: '#', tone: '#122B29' },
+  { id: 'lnk-02', label: 'منصة إدارة المحتوى', description: 'رفع المواد العلمية ونشرها', href: '#', tone: '#7A6742' },
+  { id: 'lnk-03', label: 'البريد الإلكتروني', description: 'بريد المركز الرسمي', href: '#', tone: '#2C5F7C' },
+  { id: 'lnk-04', label: 'مساحة الملفات المشتركة', description: 'ملفات الإدارات والفرق', href: '#', tone: '#6B4A5E' },
   { id: 'lnk-05', label: 'منصة التقارير', description: 'رفع التقارير الدورية ومتابعتها', href: '#', tone: '#2E7D58' },
-  { id: 'lnk-06', label: 'قاعة الاجتماعات الافتراضية', description: 'رابط الاجتماعات عن بُعد', href: '#', tone: '#C05E4C' },
+  { id: 'lnk-06', label: 'قاعة الاجتماعات الافتراضية', description: 'رابط الاجتماعات عن بُعد', href: '#', tone: '#A8493A' },
 ]

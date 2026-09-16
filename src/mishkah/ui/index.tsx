@@ -9,47 +9,71 @@ import { ar, statusLabels, statusTones } from '../selectors'
 /* ————————————————————————— الشعار ————————————————————————— */
 
 /**
- * شعار مشكاة.
- * يستخدم الملف الرسمي تلقائيًا إذا وُضع في `public/mishkah/logo.svg` (المسار في brand.logoSrc)،
- * وإن لم يوجد يعرض الكلمة الكتابية «مشكاة» دون اختراع شعار بديل.
+ * شعار مركز مشكاة التعليمي.
+ * `full` يعرض الشعار الكامل (العلامة + اسم المركز) للشاشات الواسعة،
+ * والوضع الافتراضي يعرض العلامة وحدها مع الكلمة الكتابية بجانبها.
+ * على الخلفيات الداكنة يوضع الشعار داخل بطاقة بيضاء لأن ألوانه داكنة.
+ * لاستبدال الشعار: غيّر الملفات في `public/mishkah/` أو المسارات في `brand.ts`.
  */
-export function Logo({ size = 40, withText = true, light = false }: { size?: number; withText?: boolean; light?: boolean }) {
-  const [fileOk, setFileOk] = useState(true)
-  const useFile = Boolean(brand.logoSrc) && fileOk
+export function Logo({
+  size = 40,
+  withText = true,
+  light = false,
+  full = false,
+}: {
+  size?: number
+  withText?: boolean
+  light?: boolean
+  full?: boolean
+}) {
+  const [markOk, setMarkOk] = useState(true)
+
+  if (full) {
+    return (
+      <span
+        className="inline-flex items-center justify-center self-start"
+        style={{
+          background: '#fff',
+          borderRadius: 'var(--mk-radius-lg)',
+          padding: `${size * 0.42}px ${size * 0.62}px`,
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element -- ملف شعار يوفّره المركز وقد يُستبدل */}
+        <img
+          src={brand.logoSrc}
+          alt={`${brand.orgName} — ${brand.orgNameEn}`}
+          style={{ height: size * 2.6, width: 'auto', objectFit: 'contain' }}
+        />
+      </span>
+    )
+  }
 
   return (
     <span className="flex items-center gap-2.5">
-      {useFile ? (
-        /* eslint-disable-next-line @next/next/no-img-element -- ملف الشعار يوضع من قِبل المركز وقد لا يكون موجودًا */
-        <img
-          src={brand.logoSrc}
-          alt={brand.orgName}
-          width={size}
-          height={size}
-          style={{ width: size, height: size, objectFit: 'contain' }}
-          onError={() => setFileOk(false)}
-        />
-      ) : (
-        <span
-          className="mk-avatar"
-          style={{
-            width: size,
-            height: size,
-            background: light ? 'rgba(255,255,255,0.14)' : 'var(--mk-primary)',
-            fontSize: size * 0.34,
-            borderRadius: size * 0.34,
-          }}
-          aria-hidden
-        >
-          <LampMark size={size * 0.56} />
-        </span>
-      )}
+      <span
+        className="inline-flex items-center justify-center shrink-0"
+        style={
+          light
+            ? { background: '#fff', borderRadius: size * 0.3, padding: size * 0.14, width: size, height: size }
+            : { width: size, height: size }
+        }
+      >
+        {markOk ? (
+          /* eslint-disable-next-line @next/next/no-img-element -- ملف شعار يوفّره المركز وقد يُستبدل */
+          <img
+            src={brand.markSrc}
+            alt={brand.orgName}
+            /* الخلفية البيضاء للملف تذوب في أي سطح فاتح بفضل mix-blend-mode */
+            style={{ width: '100%', height: '100%', objectFit: 'contain', mixBlendMode: light ? 'normal' : 'multiply' }}
+            onError={() => setMarkOk(false)}
+          />
+        ) : (
+          <LampMark size={size * 0.72} />
+        )}
+      </span>
       {withText && (
         <span className="leading-tight">
-          <span
-            className="block font-bold"
-            style={{ color: light ? '#fff' : 'var(--mk-ink)', fontSize: size * 0.4 }}
-          >
+          <span className="block font-bold" style={{ color: light ? '#fff' : 'var(--mk-ink)', fontSize: size * 0.4 }}>
             {brand.shortName}
           </span>
           <span
@@ -64,10 +88,10 @@ export function Logo({ size = 40, withText = true, light = false }: { size?: num
   )
 }
 
-/** علامة المشكاة المجرّدة (تُستبدل بملف الشعار الرسمي عند توفره) */
+/** علامة احتياطية بسيطة تظهر فقط إذا تعذّر تحميل ملف الشعار */
 function LampMark({ size }: { size: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden style={{ color: 'var(--mk-primary)' }}>
       <path d="M8 3h8l-1.6 4.2a4.6 4.6 0 1 1-4.8 0L8 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <circle cx="12" cy="12.2" r="1.7" fill="currentColor" />
       <path d="M12 17.6V21M9 21h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />

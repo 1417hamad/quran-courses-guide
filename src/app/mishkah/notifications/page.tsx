@@ -23,7 +23,7 @@ const kindMeta: Record<NotificationKind, { label: string; icon: React.ElementTyp
   action: { label: 'إجراء مطلوب', icon: CircleAlert, tone: 'var(--mk-danger)' },
   decision: { label: 'قرار جديد', icon: FileText, tone: 'var(--mk-primary)' },
   mention: { label: 'تعليق أو إشارة', icon: AtSign, tone: 'var(--mk-info)' },
-  meeting: { label: 'موعد أو لقاء', icon: CalendarClock, tone: 'var(--mk-gold)' },
+  meeting: { label: 'موعد أو لقاء', icon: CalendarClock, tone: 'var(--mk-gold-deep)' },
   request: { label: 'تحديث على طلب', icon: Inbox, tone: 'var(--mk-info)' },
   announcement: { label: 'إعلان', icon: Megaphone, tone: 'var(--mk-primary)' },
   celebration: { label: 'تهنئة أو مناسبة', icon: PartyPopper, tone: '#C05E4C' },

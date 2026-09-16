@@ -61,7 +61,7 @@ export function LoginScreen() {
         className="lg:w-1/2 px-6 py-10 lg:py-16 lg:px-14 flex flex-col justify-center mk-pattern"
         style={{ background: 'var(--mk-primary)', color: '#fff' }}
       >
-        <Logo size={54} light />
+        <Logo size={54} full />
         <h1 className="mt-8 text-2xl lg:text-4xl font-bold leading-snug">{brand.appName}</h1>
         <p className="mt-3 text-base lg:text-lg" style={{ color: 'rgba(255,255,255,0.78)' }}>
           {brand.tagline}

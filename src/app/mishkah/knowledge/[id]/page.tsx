@@ -62,7 +62,7 @@ export default function DocumentPage() {
             className="mk-btn mk-btn-ghost mk-btn-sm shrink-0"
             onClick={() => toggleFavoriteDoc(doc.id)}
             aria-label="المفضلة"
-            style={doc.favorite ? { color: 'var(--mk-gold)', borderColor: 'var(--mk-gold)' } : undefined}
+            style={doc.favorite ? { color: 'var(--mk-gold-deep)', borderColor: 'var(--mk-gold-deep)' } : undefined}
           >
             <Star size={15} fill={doc.favorite ? 'currentColor' : 'none'} />
           </button>

@@ -63,7 +63,7 @@ export default function PersonPage() {
         <SectionHeader title="مجال العمل" />
         <div className="flex flex-wrap gap-1.5">
           {person.expertise.map((x) => (
-            <Badge key={x} tone="var(--mk-gold)">
+            <Badge key={x} tone="var(--mk-gold-deep)">
               {x}
             </Badge>
           ))}
@@ -92,7 +92,7 @@ export default function PersonPage() {
             {myTeams.map((t) => (
               <Link key={t.id} href={`/mishkah/teams/${t.id}`} className="mk-side-link">
                 {t.name}
-                {t.leadId === person.id && <Badge tone="var(--mk-gold)">القائد</Badge>}
+                {t.leadId === person.id && <Badge tone="var(--mk-gold-deep)">القائد</Badge>}
               </Link>
             ))}
           </div>

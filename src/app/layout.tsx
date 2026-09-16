@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
+import { SiteChrome } from '@/components/layout/SiteChrome'
 import { Toaster } from 'sonner'
 import { AuthRedirect } from '@/components/AuthRedirect'
 
@@ -54,9 +53,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={ibmPlex.variable}>
       <body className="min-h-screen flex flex-col bg-gray-50 font-[family-name:var(--font-arabic)]">
         <AuthRedirect />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
         <Toaster position="top-center" richColors dir="rtl" />
       </body>
     </html>

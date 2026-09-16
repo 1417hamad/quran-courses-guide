@@ -2,43 +2,47 @@
  * هوية «بيئة مشكاة الرقمية»
  * ---------------------------------------------------------------------------
  * هذا الملف هو المرجع الوحيد لتعديل الهوية البصرية والنصوص العامة للمنصة.
- * لتغيير الشعار: ضع ملفك في `public/mishkah/logo.svg` (يُستخدم تلقائيًا).
- * لتغيير الألوان: عدّل القيم هنا وستنعكس على كامل المنصة عبر متغيرات CSS.
+ * الألوان مستخرجة من شعار مركز مشكاة التعليمي الرسمي:
+ *   الأخضر الداكن #122B29 · الرملي الذهبي #B39E7E
+ * لتغيير الشعار: استبدل الملفات في `public/mishkah/` بالمسارات أدناه.
  */
 
 export const brand = {
   /** اسم المنصة كما يظهر في الواجهة */
   appName: 'بيئة مشكاة الرقمية',
   /** اسم الجهة المالكة */
-  orgName: 'مركز مشكاة العلمي',
+  orgName: 'مركز مشكاة التعليمي',
+  orgNameEn: 'Mishkat Educational Center',
   shortName: 'مشكاة',
   tagline: 'بيئة عمل رقمية تجمع فريق المركز في مكان واحد',
   welcomeLine: 'أهلًا بك في بيئة مشكاة',
 
-  /**
-   * مسار الشعار الرسمي للمركز.
-   * ضع ملف الشعار في `public/mishkah/logo.svg` ثم اجعل القيمة: '/mishkah/logo.svg'
-   * وسيظهر تلقائيًا في كل شاشات المنصة.
-   * ما دامت القيمة فارغة تُعرض الكلمة الكتابية «مشكاة» دون اختراع شعار بديل.
-   */
-  logoSrc: '',
+  /** الشعار الكامل (العلامة + اسم المركز) — للشاشات الواسعة مثل شاشة الدخول */
+  logoSrc: '/mishkah/logo.png',
+  /** العلامة وحدها — للأماكن الضيقة مثل الشريط العلوي */
+  markSrc: '/mishkah/logo-mark.png',
 
   /** ألوان الهوية — تُحقن كمتغيرات CSS في جذر المنصة */
   colors: {
-    primary: '#0E4F4A',
-    primaryDark: '#0A3A36',
-    primarySoft: '#E7F0EE',
-    primaryTint: '#F2F7F6',
-    gold: '#B98B3E',
-    goldSoft: '#F7EEDD',
-    ink: '#16211F',
-    muted: '#6C7C78',
-    line: '#E3E9E6',
+    /** الأخضر الداكن المأخوذ من الشعار */
+    primary: '#122B29',
+    /** درجة أفتح للتفاعل (hover) لأن الأساسي داكن جدًا */
+    primaryDark: '#1E4340',
+    primarySoft: '#E6EDEB',
+    primaryTint: '#F3F7F5',
+    /** الرملي الذهبي من الشعار — للتعبئة والزخرفة لا للنصوص */
+    gold: '#B39E7E',
+    /** درجة داكنة من الرملي تصلح للنصوص والأيقونات (تباين ٥٫٥:١ على الأبيض) */
+    goldDeep: '#7A6742',
+    goldSoft: '#F4F1EA',
+    ink: '#14201E',
+    muted: '#66756F',
+    line: '#E2E8E5',
     surface: '#FFFFFF',
     bg: '#F5F7F5',
-    info: '#2A6F97',
+    info: '#2C5F7C',
     success: '#2E7D58',
-    warning: '#B4782A',
+    warning: '#8F5E18',
     danger: '#B23A34',
   },
 
@@ -60,6 +64,7 @@ export function brandCssVars(): Record<string, string> {
     '--mk-primary-soft': brand.colors.primarySoft,
     '--mk-primary-tint': brand.colors.primaryTint,
     '--mk-gold': brand.colors.gold,
+    '--mk-gold-deep': brand.colors.goldDeep,
     '--mk-gold-soft': brand.colors.goldSoft,
     '--mk-ink': brand.colors.ink,
     '--mk-muted': brand.colors.muted,

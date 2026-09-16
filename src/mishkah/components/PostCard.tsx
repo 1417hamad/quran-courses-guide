@@ -31,9 +31,9 @@ const audienceIcon = {
 const kindTones: Record<Post['kind'], string> = {
   news: 'var(--mk-info)',
   announcement: 'var(--mk-primary)',
-  congrats: 'var(--mk-gold)',
-  poll: '#5B4B8A',
-  photos: '#C05E4C',
+  congrats: 'var(--mk-gold-deep)',
+  poll: '#6B4A5E',
+  photos: '#A8493A',
   decision: 'var(--mk-danger)',
   knowledge: 'var(--mk-success)',
 }
@@ -50,7 +50,7 @@ export function PostCard({ post }: { post: Post }) {
   return (
     <article className="mk-card p-4 sm:p-5">
       {post.pinned && (
-        <p className="flex items-center gap-1.5 text-xs font-bold mb-2.5" style={{ color: 'var(--mk-gold)' }}>
+        <p className="flex items-center gap-1.5 text-xs font-bold mb-2.5" style={{ color: 'var(--mk-gold-deep)' }}>
           <Pin size={13} />
           منشور مثبّت
         </p>
@@ -215,7 +215,7 @@ export function PostCard({ post }: { post: Post }) {
             className="mk-btn mk-btn-ghost mk-btn-sm"
             onClick={() => toggleSavePost(post.id)}
             aria-label="حفظ المنشور"
-            style={post.saved ? { color: 'var(--mk-gold)', borderColor: 'var(--mk-gold)' } : undefined}
+            style={post.saved ? { color: 'var(--mk-gold-deep)', borderColor: 'var(--mk-gold-deep)' } : undefined}
           >
             <Bookmark size={15} fill={post.saved ? 'currentColor' : 'none'} />
           </button>

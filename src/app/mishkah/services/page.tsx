@@ -39,7 +39,7 @@ export default function ServicesPage() {
       {!q && cat === 'all' && (
         <section>
           <p className="mk-section-title mb-2.5">
-            <Star size={15} style={{ color: 'var(--mk-gold)' }} />
+            <Star size={15} style={{ color: 'var(--mk-gold-deep)' }} />
             الأكثر استخدامًا
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">

@@ -37,7 +37,7 @@ export default function ProfilePage() {
 
         <div className="flex flex-wrap gap-1.5 mt-3">
           {currentUser.expertise.map((e) => (
-            <Badge key={e} tone="var(--mk-gold)">
+            <Badge key={e} tone="var(--mk-gold-deep)">
               {e}
             </Badge>
           ))}

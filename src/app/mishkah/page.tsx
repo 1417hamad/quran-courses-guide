@@ -99,7 +99,7 @@ export default function CommunityPage() {
       <section>
         <SectionHeader
           title="خدمات تستخدمها كثيرًا"
-          icon={<Sparkles size={16} style={{ color: 'var(--mk-gold)' }} />}
+          icon={<Sparkles size={16} style={{ color: 'var(--mk-gold-deep)' }} />}
           action={
             <Link href="/mishkah/services" className="mk-link text-xs">
               كل الخدمات ←
@@ -165,7 +165,7 @@ export default function CommunityPage() {
                 {[...todayMeetings, ...weekMeetings].slice(0, 4).map((m) => (
                   <Link key={m.id} href={`/mishkah/calendar/${m.id}`} className="block rounded-xl p-2.5 mk-card-hover" style={{ background: 'var(--mk-primary-tint)' }}>
                     <div className="flex items-center gap-2 mb-1">
-                      <Badge tone={isToday(m.date) ? 'var(--mk-gold)' : 'var(--mk-muted)'}>
+                      <Badge tone={isToday(m.date) ? 'var(--mk-gold-deep)' : 'var(--mk-muted)'}>
                         {isToday(m.date) ? 'اليوم' : weekdayOf(m.date)}
                       </Badge>
                       <span className="text-xs mk-muted">{formatTime(m.start)}</span>
@@ -234,7 +234,7 @@ export default function CommunityPage() {
           {/* الموظفون الجدد */}
           {newcomers.length > 0 && (
             <div className="mk-card p-4">
-              <SectionHeader title="انضموا حديثًا" icon={<UserPlus size={16} style={{ color: 'var(--mk-gold)' }} />} />
+              <SectionHeader title="انضموا حديثًا" icon={<UserPlus size={16} style={{ color: 'var(--mk-gold-deep)' }} />} />
               <div className="space-y-3">
                 {newcomers.map((e) => (
                   <Link key={e.id} href={`/mishkah/directory/${e.id}`} className="flex items-center gap-2.5">
@@ -251,7 +251,7 @@ export default function CommunityPage() {
 
           {/* منجزات الإدارات */}
           <div className="mk-card p-4">
-            <SectionHeader title="منجزات الإدارات" icon={<Trophy size={16} style={{ color: 'var(--mk-gold)' }} />} />
+            <SectionHeader title="منجزات الإدارات" icon={<Trophy size={16} style={{ color: 'var(--mk-gold-deep)' }} />} />
             <div className="space-y-3">
               {units.slice(0, 3).map((u) => (
                 <Link key={u.id} href={`/mishkah/units/${u.id}`} className="block">

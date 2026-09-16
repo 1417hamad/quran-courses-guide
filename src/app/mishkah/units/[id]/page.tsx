@@ -77,7 +77,7 @@ export default function UnitPage() {
         {canSeeKpis && unit.kpis && (
           <div className="mt-4">
             <p className="text-xs font-bold mb-2 flex items-center gap-1.5">
-              <BarChart3 size={13} style={{ color: 'var(--mk-gold)' }} />
+              <BarChart3 size={13} style={{ color: 'var(--mk-gold-deep)' }} />
               مؤشرات مختصرة (تظهر بحسب الصلاحية)
             </p>
             <div className="grid grid-cols-2 gap-2.5">

@@ -79,9 +79,9 @@ export const posts: Post[] = [
       'لقطات من الملتقى العلمي الذي أقيم الأسبوع الماضي بمشاركة ٧٢ معلمًا ومعلمة. شكرًا لكل من أسهم في إنجاحه.',
     audience: { kind: 'center', label: 'لجميع موظفي المركز' },
     images: [
-      { caption: 'افتتاح الملتقى', tone: '#0E4F4A' },
-      { caption: 'الجلسة الثانية', tone: '#B98B3E' },
-      { caption: 'ورشة المجموعات', tone: '#2A6F97' },
+      { caption: 'افتتاح الملتقى', tone: '#122B29' },
+      { caption: 'الجلسة الثانية', tone: '#7A6742' },
+      { caption: 'ورشة المجموعات', tone: '#2C5F7C' },
     ],
     reactions: { '🤍': 17, '👏': 12 },
     comments: [{ id: 'c-06', authorId: 'emp-07', at: daysAgo(1.8), body: 'تنظيم موفق، وفق الله الجميع.' }],

@@ -33,13 +33,13 @@ export const statusLabels: Record<RequestStatus, string> = {
 
 /** لون كل حالة (يعتمد على متغيرات الهوية) */
 export const statusTones: Record<RequestStatus, string> = {
-  draft: '#6C7C78',
-  submitted: '#2A6F97',
-  review: '#B4782A',
-  returned: '#B4782A',
+  draft: '#66756F',
+  submitted: '#2C5F7C',
+  review: '#8F5E18',
+  returned: '#8F5E18',
   approved: '#2E7D58',
-  in_progress: '#2A6F97',
-  completed: '#0E4F4A',
+  in_progress: '#2C5F7C',
+  completed: '#122B29',
   rejected: '#B23A34',
 }
 
@@ -76,12 +76,12 @@ export const meetingKindLabels: Record<MeetingKind, string> = {
 }
 
 export const meetingKindTones: Record<MeetingKind, string> = {
-  staff: '#0E4F4A',
-  unit: '#2A6F97',
-  workshop: '#B98B3E',
-  scientific: '#5B4B8A',
+  staff: '#122B29',
+  unit: '#2C5F7C',
+  workshop: '#7A6742',
+  scientific: '#6B4A5E',
   team: '#2E7D58',
-  social: '#C05E4C',
+  social: '#A8493A',
   deadline: '#B23A34',
 }
 

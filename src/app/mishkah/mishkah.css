@@ -88,13 +88,14 @@
   background: var(--mk-primary-dark);
 }
 
+/* زر ثانوي بلون الهوية الرملي — يستخدم الدرجة الداكنة ليبقى النص الأبيض مقروءًا */
 .mk-btn-gold {
-  background: var(--mk-gold);
+  background: var(--mk-gold-deep);
   color: #fff;
 }
 
 .mk-btn-gold:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--mk-gold) 82%, #000);
+  background: color-mix(in srgb, var(--mk-gold-deep) 85%, #000);
 }
 
 .mk-btn-soft {
